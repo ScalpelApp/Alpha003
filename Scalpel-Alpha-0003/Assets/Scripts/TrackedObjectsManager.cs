@@ -3,8 +3,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using Vuforia;
 
-using Project.Assets.Watson.IBM;
-
 public class TrackedObjectsManager : MonoBehaviour {
 
     public Button mainButton;
