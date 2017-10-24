@@ -225,6 +225,9 @@
     <Compile Include="Assets\Scripts\CustomTrackedHandler.cs" />
     <Compile Include="Assets\Scripts\MyTrackableObject.cs" />
     <Compile Include="Assets\Scripts\TrackedObjectsManager.cs" />
+    <Compile Include="Assets\Speech Auto Detector\Scripts\AudioPlayer.cs" />
+    <Compile Include="Assets\Speech Auto Detector\Scripts\AudioRecorder.cs" />
+    <Compile Include="Assets\Speech Auto Detector\Scripts\SceneManager.cs" />
     <Compile Include="Assets\Vuforia\Scripts\DefaultInitializationErrorHandler.cs" />
     <Compile Include="Assets\Vuforia\Scripts\DefaultSmartTerrainEventHandler.cs" />
     <Compile Include="Assets\Vuforia\Scripts\DefaultTrackableEventHandler.cs" />
@@ -460,6 +463,8 @@
     <None Include="Assets\Editor\Vuforia\CylinderTargetTextures\VuforiaMars_Images\authoringinfo.xml" />
     <None Include="Assets\Editor\Vuforia\TargetsetData\VuforiaMars_Object_info.xml" />
     <None Include="Assets\Editor\Vuforia\VuforiaMars_VuMark\authoringinfo.xml" />
+    <None Include="Assets\Speech Auto Detector\LICENSE.txt" />
+    <None Include="Assets\Speech Auto Detector\README.txt" />
     <None Include="Assets\StreamingAssets\Vuforia\Scalpel-Test.xml" />
     <None Include="Assets\StreamingAssets\Vuforia\VuforiaMars_Images.xml" />
     <None Include="Assets\StreamingAssets\Vuforia\VuforiaMars_Object_OT.xml" />
