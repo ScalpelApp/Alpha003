@@ -1,0 +1,397 @@
+-debug
+-target:library
+-nowarn:0169
+-langversion:4
+-out:Temp/Assembly-CSharp.dll
+-unsafe
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.CoreModule.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AccessibilityModule.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.ParticleSystemModule.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.PhysicsModule.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.VehiclesModule.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.ClothModule.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AnimationModule.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.TextRenderingModule.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UIModule.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.TerrainPhysicsModule.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.IMGUIModule.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestModule.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestAudioModule.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestTextureModule.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestWWWModule.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterInputModule.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterRendererModule.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UNETModule.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.DirectorModule.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UnityAnalyticsModule.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.CrashReportingModule.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.PerformanceReportingModule.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UnityConnectModule.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.WebModule.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.ARModule.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.VRModule.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.UIElementsModule.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.StyleSheetsModule.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AudioModule.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.GameCenterModule.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.GridModule.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.ImageConversionModule.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.InputModule.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.JSONSerializeModule.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.ParticlesLegacyModule.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.Physics2DModule.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.ScreenCaptureModule.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.SpriteMaskModule.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.TerrainModule.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.TilemapModule.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.VideoModule.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.WindModule.dll"
+-r:"C:/Program Files/Unity/Editor/Data/PlaybackEngines/VuforiaSupport/Managed/Runtime/Vuforia.UnityExtensions.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UIAutomation/UnityEngine.UIAutomation.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/RuntimeEditor/UnityEngine.GoogleAudioSpatializer.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll"
+-r:C:/Users/JAMES/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.analytics@1.0.1/UnityEngine.Analytics.dll
+-r:C:/Users/JAMES/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.purchasing@1.0.1/UnityEngine.Purchasing.dll
+-define:UNITY_5_3_OR_NEWER
+-define:UNITY_5_4_OR_NEWER
+-define:UNITY_5_5_OR_NEWER
+-define:UNITY_5_6_OR_NEWER
+-define:UNITY_2017_1_OR_NEWER
+-define:UNITY_2017_2_OR_NEWER
+-define:UNITY_2017_2_0
+-define:UNITY_2017_2
+-define:UNITY_2017
+-define:UNITY_ANALYTICS
+-define:ENABLE_AUDIO
+-define:ENABLE_CACHING
+-define:ENABLE_CLOTH
+-define:ENABLE_GENERICS
+-define:ENABLE_PVR_GI
+-define:ENABLE_MICROPHONE
+-define:ENABLE_MULTIPLE_DISPLAYS
+-define:ENABLE_PHYSICS
+-define:ENABLE_SPRITERENDERER_FLIPPING
+-define:ENABLE_SPRITES
+-define:ENABLE_GRID
+-define:ENABLE_TILEMAP
+-define:ENABLE_TERRAIN
+-define:ENABLE_RAKNET
+-define:ENABLE_DIRECTOR
+-define:ENABLE_UNET
+-define:ENABLE_LZMA
+-define:ENABLE_UNITYEVENTS
+-define:ENABLE_WEBCAM
+-define:ENABLE_WWW
+-define:ENABLE_CLOUD_SERVICES_COLLAB
+-define:ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS
+-define:ENABLE_CLOUD_SERVICES_ADS
+-define:ENABLE_CLOUD_HUB
+-define:ENABLE_CLOUD_PROJECT_ID
+-define:ENABLE_CLOUD_SERVICES_USE_WEBREQUEST
+-define:ENABLE_CLOUD_SERVICES_UNET
+-define:ENABLE_CLOUD_SERVICES_BUILD
+-define:ENABLE_CLOUD_LICENSE
+-define:ENABLE_EDITOR_HUB
+-define:ENABLE_EDITOR_HUB_LICENSE
+-define:ENABLE_WEBSOCKET_CLIENT
+-define:ENABLE_DIRECTOR_AUDIO
+-define:ENABLE_TIMELINE
+-define:ENABLE_EDITOR_METRICS
+-define:ENABLE_EDITOR_METRICS_CACHING
+-define:ENABLE_NATIVE_ARRAY
+-define:ENABLE_SPRITE_MASKING
+-define:INCLUDE_DYNAMIC_GI
+-define:INCLUDE_GI
+-define:ENABLE_MONO_BDWGC
+-define:PLATFORM_SUPPORTS_MONO
+-define:INCLUDE_PUBNUB
+-define:ENABLE_PLAYMODE_TESTS_RUNNER
+-define:ENABLE_VIDEO
+-define:ENABLE_RMGUI
+-define:ENABLE_PACKMAN
+-define:ENABLE_CUSTOM_RENDER_TEXTURE
+-define:ENABLE_STYLE_SHEETS
+-define:PLATFORM_ANDROID
+-define:UNITY_ANDROID
+-define:UNITY_ANDROID_API
+-define:ENABLE_SUBSTANCE
+-define:ENABLE_EGL
+-define:ENABLE_NETWORK
+-define:ENABLE_RUNTIME_GI
+-define:ENABLE_CRUNCH_TEXTURE_COMPRESSION
+-define:ENABLE_UNITYWEBREQUEST
+-define:ENABLE_CLOUD_SERVICES
+-define:ENABLE_CLOUD_SERVICES_ANALYTICS
+-define:ENABLE_EVENT_QUEUE
+-define:ENABLE_CLOUD_SERVICES_PURCHASING
+-define:ENABLE_CLOUD_SERVICES_CRASH_REPORTING
+-define:ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING
+-define:PLATFORM_SUPPORTS_ADS_ID
+-define:UNITY_CAN_SHOW_SPLASH_SCREEN
+-define:ENABLE_VR
+-define:ENABLE_AR
+-define:ENABLE_SPATIALTRACKING
+-define:ENABLE_UNITYADS_RUNTIME
+-define:UNITY_UNITYADS_API
+-define:ENABLE_MONO
+-define:NET_2_0_SUBSET
+-define:ENABLE_PROFILER
+-define:DEBUG
+-define:TRACE
+-define:UNITY_ASSERTIONS
+-define:UNITY_EDITOR
+-define:UNITY_EDITOR_64
+-define:UNITY_EDITOR_WIN
+-define:ENABLE_NATIVE_ARRAY_CHECKS
+-define:UNITY_TEAM_LICENSE
+-define:ENABLE_VSTU
+-define:UNITY_HAS_GOOGLEVR
+-define:UNITY_HAS_TANGO
+Assets/Scripts/CustomTrackedHandler.cs
+Assets/Scripts/MyTrackableObject.cs
+Assets/Scripts/TrackedObjectsManager.cs
+Assets/unity-sdk-develop/Examples/ServiceExamples/Scripts/ExampleAlchemyDataNews.cs
+Assets/unity-sdk-develop/Examples/ServiceExamples/Scripts/ExampleAlchemyLanguage.cs
+Assets/unity-sdk-develop/Examples/ServiceExamples/Scripts/ExampleConversation.cs
+Assets/unity-sdk-develop/Examples/ServiceExamples/Scripts/ExampleDiscoveryV1.cs
+Assets/unity-sdk-develop/Examples/ServiceExamples/Scripts/ExampleDocumentConversion.cs
+Assets/unity-sdk-develop/Examples/ServiceExamples/Scripts/ExampleGetToken.cs
+Assets/unity-sdk-develop/Examples/ServiceExamples/Scripts/ExampleLanguageTranslation.cs
+Assets/unity-sdk-develop/Examples/ServiceExamples/Scripts/ExampleLanguageTranslator.cs
+Assets/unity-sdk-develop/Examples/ServiceExamples/Scripts/ExampleNaturalLanguageClassifier.cs
+Assets/unity-sdk-develop/Examples/ServiceExamples/Scripts/ExampleNaturalLanguageUnderstandingV1.cs
+Assets/unity-sdk-develop/Examples/ServiceExamples/Scripts/ExamplePersonalityInsightsV3.cs
+Assets/unity-sdk-develop/Examples/ServiceExamples/Scripts/ExampleRetrieveAndRank.cs
+Assets/unity-sdk-develop/Examples/ServiceExamples/Scripts/ExampleSpeechToText.cs
+Assets/unity-sdk-develop/Examples/ServiceExamples/Scripts/ExampleStreaming.cs
+Assets/unity-sdk-develop/Examples/ServiceExamples/Scripts/ExampleTextToSpeech.cs
+Assets/unity-sdk-develop/Examples/ServiceExamples/Scripts/ExampleToneAnalyzer.cs
+Assets/unity-sdk-develop/Examples/ServiceExamples/Scripts/ExampleTradeoffAnalytics.cs
+Assets/unity-sdk-develop/Examples/ServiceExamples/Scripts/ExampleVisualRecognition.cs
+Assets/unity-sdk-develop/Scripts/Connection/RESTConnector.cs
+Assets/unity-sdk-develop/Scripts/Connection/WSConnector.cs
+Assets/unity-sdk-develop/Scripts/Debug/DebugReactor.cs
+Assets/unity-sdk-develop/Scripts/Logging/FileReactor.cs
+Assets/unity-sdk-develop/Scripts/Logging/ILogReactor.cs
+Assets/unity-sdk-develop/Scripts/Logging/Logger.cs
+Assets/unity-sdk-develop/Scripts/Services/AlchemyAPI/v1/AlchemyAPI.cs
+Assets/unity-sdk-develop/Scripts/Services/AlchemyAPI/v1/DataModels.cs
+Assets/unity-sdk-develop/Scripts/Services/Conversation/v1/Conversation.cs
+Assets/unity-sdk-develop/Scripts/Services/Conversation/v1/DataModels.cs
+Assets/unity-sdk-develop/Scripts/Services/Discovery/v1/DataModels.cs
+Assets/unity-sdk-develop/Scripts/Services/Discovery/v1/Discovery.cs
+Assets/unity-sdk-develop/Scripts/Services/DocumentConversion/v1/DataModels.cs
+Assets/unity-sdk-develop/Scripts/Services/DocumentConversion/v1/DocumentConversion.cs
+Assets/unity-sdk-develop/Scripts/Services/IWatsonService.cs
+Assets/unity-sdk-develop/Scripts/Services/LanguageTranslation/v2/DataModels.cs
+Assets/unity-sdk-develop/Scripts/Services/LanguageTranslation/v2/LanguageTranslation.cs
+Assets/unity-sdk-develop/Scripts/Services/LanguageTranslator/v2/DataModels.cs
+Assets/unity-sdk-develop/Scripts/Services/LanguageTranslator/v2/LanguageTranslator.cs
+Assets/unity-sdk-develop/Scripts/Services/NaturalLanguageClassifier/v2/DataModels.cs
+Assets/unity-sdk-develop/Scripts/Services/NaturalLanguageClassifier/v2/NaturalLanguageClassifier.cs
+Assets/unity-sdk-develop/Scripts/Services/NaturalLanguageUnderstanding/v1/DataModels.cs
+Assets/unity-sdk-develop/Scripts/Services/NaturalLanguageUnderstanding/v1/NaturalLanguageUnderstanding.cs
+Assets/unity-sdk-develop/Scripts/Services/PersonalityInsights/v3/DataModels.cs
+Assets/unity-sdk-develop/Scripts/Services/PersonalityInsights/v3/PersonalityInsights.cs
+Assets/unity-sdk-develop/Scripts/Services/RetrieveAndRank/v1/DataModels.cs
+Assets/unity-sdk-develop/Scripts/Services/RetrieveAndRank/v1/RetrieveAndRank.cs
+Assets/unity-sdk-develop/Scripts/Services/SpeechToText/v1/DataModels.cs
+Assets/unity-sdk-develop/Scripts/Services/SpeechToText/v1/SpeechToText.cs
+Assets/unity-sdk-develop/Scripts/Services/TextToSpeech/v1/DataModels.cs
+Assets/unity-sdk-develop/Scripts/Services/TextToSpeech/v1/TextToSpeech.cs
+Assets/unity-sdk-develop/Scripts/Services/ToneAnalyzer/v3/DataModels.cs
+Assets/unity-sdk-develop/Scripts/Services/ToneAnalyzer/v3/ToneAnalyzer.cs
+Assets/unity-sdk-develop/Scripts/Services/TradeoffAnalytics/v1/DataModels.cs
+Assets/unity-sdk-develop/Scripts/Services/TradeoffAnalytics/v1/TradeoffAnalytics.cs
+Assets/unity-sdk-develop/Scripts/Services/VisualRecognition/v3/DataModels.cs
+Assets/unity-sdk-develop/Scripts/Services/VisualRecognition/v3/VisualRecognition.cs
+Assets/unity-sdk-develop/Scripts/UnitTests/TestAlchemyLanguage.cs
+Assets/unity-sdk-develop/Scripts/UnitTests/TestConversation.cs
+Assets/unity-sdk-develop/Scripts/UnitTests/TestDiscovery.cs
+Assets/unity-sdk-develop/Scripts/UnitTests/TestDocumentConversion.cs
+Assets/unity-sdk-develop/Scripts/UnitTests/TestEventManager.cs
+Assets/unity-sdk-develop/Scripts/UnitTests/TestLanguageTranslation.cs
+Assets/unity-sdk-develop/Scripts/UnitTests/TestLanguageTranslator.cs
+Assets/unity-sdk-develop/Scripts/UnitTests/TestNaturalLanguageClassifier.cs
+Assets/unity-sdk-develop/Scripts/UnitTests/TestNaturalLanguageUnderstanding.cs
+Assets/unity-sdk-develop/Scripts/UnitTests/TestPersonalityInsightsV3.cs
+Assets/unity-sdk-develop/Scripts/UnitTests/TestRetrieveAndRank.cs
+Assets/unity-sdk-develop/Scripts/UnitTests/TestRunnable.cs
+Assets/unity-sdk-develop/Scripts/UnitTests/TestSpeechToText.cs
+Assets/unity-sdk-develop/Scripts/UnitTests/TestTextToSpeech.cs
+Assets/unity-sdk-develop/Scripts/UnitTests/TestToneAnalyzer.cs
+Assets/unity-sdk-develop/Scripts/UnitTests/TestTradeoffAnalytics.cs
+Assets/unity-sdk-develop/Scripts/UnitTests/TestVisualRecognition.cs
+Assets/unity-sdk-develop/Scripts/UnitTests/UnitTest.cs
+Assets/unity-sdk-develop/Scripts/UnitTests/UnitTestManager.cs
+Assets/unity-sdk-develop/Scripts/Utilities/AudioClipUtil.cs
+Assets/unity-sdk-develop/Scripts/Utilities/Constants.cs
+Assets/unity-sdk-develop/Scripts/Utilities/Credentials.cs
+Assets/unity-sdk-develop/Scripts/Utilities/EventManager.cs
+Assets/unity-sdk-develop/Scripts/Utilities/FrameRateCounter.cs
+Assets/unity-sdk-develop/Scripts/Utilities/KeyEventManager.cs
+Assets/unity-sdk-develop/Scripts/Utilities/NestedPrefabs.cs
+Assets/unity-sdk-develop/Scripts/Utilities/Runnable.cs
+Assets/unity-sdk-develop/Scripts/Utilities/SerializedDelegate.cs
+Assets/unity-sdk-develop/Scripts/Utilities/Singleton.cs
+Assets/unity-sdk-develop/Scripts/Utilities/TimedDestroy.cs
+Assets/unity-sdk-develop/Scripts/Utilities/UnityObjectUtil.cs
+Assets/unity-sdk-develop/Scripts/Utilities/Utility.cs
+Assets/unity-sdk-develop/Scripts/Utilities/WatsonException.cs
+Assets/unity-sdk-develop/Scripts/Utilities/WaveFile.cs
+Assets/unity-sdk-develop/Scripts/Widgets/DataTypes.cs
+Assets/unity-sdk-develop/Scripts/Widgets/Widget.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/Aot/fsAotCompilationManager.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/Aot/fsAotConfiguration.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/Aot/fsAotVersionInfo.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/Aot/fsIAotConverter.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/Converters/fsArrayConverter.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/Converters/fsDateConverter.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/Converters/fsDictionaryConverter.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/Converters/fsEnumConverter.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/Converters/fsForwardConverter.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/Converters/fsGuidConverter.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/Converters/fsIEnumerableConverter.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/Converters/fsKeyValuePairConverter.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/Converters/fsNullableConverter.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/Converters/fsPrimitiveConverter.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/Converters/fsReflectedConverter.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/Converters/fsTypeConverter.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/Converters/fsWeakReferenceConverter.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/Converters/Unity/AnimationCurve_DirectConverter.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/Converters/Unity/Bounds_DirectConverter.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/Converters/Unity/Gradient_DirectConverter.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/Converters/Unity/GUIStyle_DirectConverter.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/Converters/Unity/GUIStyleState_DirectConverter.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/Converters/Unity/Keyframe_DirectConverter.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/Converters/Unity/LayerMask_DirectConverter.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/Converters/Unity/Rect_DirectConverter.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/Converters/Unity/RectOffset_DirectConverter.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/Converters/Unity/UnityEvent_Converter.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/fsBaseConverter.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/fsConfig.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/fsContext.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/fsConverter.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/fsConverterRegistrar.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/fsData.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/fsDirectConverter.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/fsExceptions.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/fsIgnoreAttribute.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/fsISerializationCallbacks.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/fsJsonParser.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/fsJsonPrinter.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/fsMemberSerialization.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/fsObjectAttribute.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/fsObjectProcessor.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/fsPropertyAttribute.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/fsResult.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/fsSerializer.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/Internal/fsCyclicReferenceManager.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/Internal/fsOption.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/Internal/fsPortableReflection.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/Internal/fsTypeExtensions.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/Internal/fsVersionedType.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/Internal/fsVersionManager.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/Reflection/fsMetaProperty.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/Reflection/fsMetaType.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/Reflection/fsReflectionUtility.cs
+Assets/unity-sdk-develop/ThirdParty/FullSerializer/Reflection/fsTypeCache.cs
+Assets/unity-sdk-develop/ThirdParty/MiniJSON/MiniJSON.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/AssemblyInfo.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/ByteOrder.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/CloseEventArgs.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/CloseStatusCode.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/CompressionMethod.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/ErrorEventArgs.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Ext.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Fin.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/HttpBase.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/HttpRequest.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/HttpResponse.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/LogData.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Logger.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/LogLevel.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Mask.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/MessageEventArgs.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Net/AuthenticationBase.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Net/AuthenticationChallenge.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Net/AuthenticationResponse.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Net/AuthenticationSchemes.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Net/Chunk.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Net/ChunkedRequestStream.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Net/ChunkStream.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Net/ClientSslConfiguration.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Net/Cookie.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Net/CookieCollection.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Net/CookieException.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Net/EndPointListener.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Net/EndPointManager.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Net/HttpBasicIdentity.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Net/HttpConnection.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Net/HttpDigestIdentity.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Net/HttpHeaderInfo.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Net/HttpHeaderType.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Net/HttpListener.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Net/HttpListenerAsyncResult.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Net/HttpListenerContext.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Net/HttpListenerException.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Net/HttpListenerPrefix.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Net/HttpListenerPrefixCollection.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Net/HttpListenerRequest.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Net/HttpListenerResponse.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Net/HttpRequestHeader.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Net/HttpResponseHeader.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Net/HttpStatusCode.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Net/HttpStreamAsyncResult.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Net/HttpUtility.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Net/HttpVersion.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Net/InputChunkState.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Net/InputState.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Net/LineState.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Net/NetworkCredential.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Net/QueryStringCollection.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Net/ReadBufferState.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Net/RequestStream.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Net/ResponseStream.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Net/ServerSslConfiguration.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Net/WebHeaderCollection.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Net/WebSockets/HttpListenerWebSocketContext.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Net/WebSockets/TcpListenerWebSocketContext.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Net/WebSockets/WebSocketContext.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Opcode.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/PayloadData.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Rsv.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Server/HttpRequestEventArgs.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Server/HttpServer.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Server/IWebSocketSession.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Server/ServerState.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Server/WebSocketBehavior.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Server/WebSocketServer.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Server/WebSocketServiceHost.cs
+"Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Server/WebSocketServiceHost`1.cs"
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Server/WebSocketServiceManager.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/Server/WebSocketSessionManager.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/WebSocket.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/WebSocketException.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/WebSocketFrame.cs
+Assets/unity-sdk-develop/ThirdParty/WebSocketSharp/WebSocketState.cs
+Assets/unity-sdk-develop/Travis/TravisBuild.cs
+Assets/unity-sdk-develop/Travis/TravisIntegrationTests.cs
+Assets/Vuforia/Scripts/DefaultInitializationErrorHandler.cs
+Assets/Vuforia/Scripts/DefaultSmartTerrainEventHandler.cs
+Assets/Vuforia/Scripts/DefaultTrackableEventHandler.cs
+-r:"C:\Program Files\Unity\Editor\Data\Mono\lib\mono\unity\System.Runtime.Serialization.dll"
+-r:"C:\Program Files\Unity\Editor\Data\Mono\lib\mono\unity\System.Xml.Linq.dll"
+-r:"C:\Program Files\Unity\Editor\Data\Mono\lib\mono\unity\UnityScript.dll"
+-r:"C:\Program Files\Unity\Editor\Data\Mono\lib\mono\unity\UnityScript.Lang.dll"
+-r:"C:\Program Files\Unity\Editor\Data\Mono\lib\mono\unity\Boo.Lang.dll"
+-sdk:unity
