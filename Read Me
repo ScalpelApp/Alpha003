@@ -1,5 +1,9 @@
 This is the current working version - Built in Unity 2017.2 - This is required to support Vuforia.
 
+
+The AR tracker is looking for the 2 & 3 of clubs
+
+
 I am currently working to update this version with Watson - The SDK is currently included in the Assets folder of this app.
 
 There is a "using IBM" error with Visual Studio - I am working to resolve this and get Watson online
