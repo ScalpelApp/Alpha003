@@ -59,24 +59,24 @@ public class TrackedObjectsManager : MonoBehaviour {
         {
             // RANDOM "ATTENTION" - TO BE REPLACED WITH WATSON
 
-            counter++;
+            //counter++;
 
-            if (counter >= 1000)
-            {
-                counter = 0;
+            //if (counter >= 1000)
+            //{
+            //    counter = 0;
 
-                System.Random r = new System.Random();
+            //    System.Random r = new System.Random();
 
-                if (r.Next(0, 2) == 0)
-                { attentionObject = (string)activeObjectsList[0]; }
-                else
-                { attentionObject = (string)activeObjectsList[1]; }
+            //    if (r.Next(0, 2) == 0)
+            //    { attentionObject = (string)activeObjectsList[0]; }
+            //    else
+            //    { attentionObject = (string)activeObjectsList[1]; }
+            //}
 
-                activeObjectString.text = attentionObject;
-            }
+            activeObjectString.text = attentionObject;
 
             // RANDOM END 
-            
+
             IEnumerable<TrackableBehaviour> activeTrackables = trackerManager.GetActiveTrackableBehaviours();
 
             foreach (var obj in myTrackedObjectsDict)
@@ -287,6 +287,9 @@ public class TrackedObjectsManager : MonoBehaviour {
                 {
                     string text = alt.transcript;
                     Debug.Log("ExampleStreaming " + string.Format("{0} ({1}, {2:0.00})\n", text, res.final ? "Final" : "Interim", alt.confidence));
+
+                    if (res.final)
+                        attentionObject = text;
                 }
             }
         }
