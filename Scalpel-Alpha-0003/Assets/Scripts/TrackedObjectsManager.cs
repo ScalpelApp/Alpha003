@@ -29,11 +29,18 @@ public class TrackedObjectsManager : MonoBehaviour {
     public AudioRecorder recorder;
     public AudioPlayer player;
 
-    private string 
-        username = "25cd6fcb-aa09-4ed7-a97b-a7e991fe8564", 
-        password = "Hf4XEkydMnNJ", 
+    private string
+        username = "25cd6fcb-aa09-4ed7-a97b-a7e991fe8564",
+        password = "Hf4XEkydMnNJ",
         url = "https://stream.watsonplatform.net/speech-to-text/api";
 
+
+// BACK-UP CREDENTIALS - COMMENT OUT ABOVE LINES AND REMOVE "//" FROM THESE LINES
+    //private string
+    //    username = "095d7fdd-a751-4783-bf30-44f601861ab5",
+    //    password = "7VLquzgEWdIi",
+    //    url = "https://stream.watsonplatform.net/speech-to-text/api";
+  
     private SpeechToText _speechToText;
 
     //INIT
