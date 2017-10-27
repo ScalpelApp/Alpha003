@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-internal class MyTrackableObject : MonoBehaviour {
+internal class MyTrackableObject {
 
     private string mName;
     private int state;
 
-    public MyTrackableObject( string _name, int _state )
+    public MyTrackableObject ( string _name, int _state )
     {
         this.mName = _name;
         this.state = _state;

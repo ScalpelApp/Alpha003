@@ -11,7 +11,7 @@ public class TrackedObjectsManager : MonoBehaviour {
 
     public Button mainButton;
     public Text scalpelString;
-    public Text spongeString;
+    public Text pincerString;
     public Text scissorsString;
     public Text activeObjectString;
 
@@ -87,13 +87,17 @@ public class TrackedObjectsManager : MonoBehaviour {
 
                     obj.Value.State = (int)objectStates.active;
 
-                    if (obj.Key == "2ofclubs")
+                    if (obj.Key == "Scalpel")
                     {
                         scalpelString.color = Color.yellow;
                     }
-                    else if (obj.Key == "3ofclubs")
+                    else if (obj.Key == "Pincers")
                     {
-                        spongeString.color = Color.yellow;
+                        pincerString.color = Color.yellow;
+                    }
+                    else if (obj.Key == "Scissors")
+                    {
+                        scissorsString.color = Color.yellow;
                     }
                 }
                 else
@@ -102,13 +106,17 @@ public class TrackedObjectsManager : MonoBehaviour {
 
                     obj.Value.State = (int)objectStates.unsure;
 
-                    if (obj.Key == "2ofclubs")
+                    if (obj.Key == "Scalpel")
                     {
                         scalpelString.color = new Color(255, 165, 0);
                     }
-                    else if (obj.Key == "3ofclubs")
+                    else if (obj.Key == "Pincers")
                     {
-                        spongeString.color = new Color(255, 165, 0);
+                        pincerString.color = new Color(255, 165, 0);
+                    }
+                    else if (obj.Key == "Scissors")
+                    {
+                        scissorsString.color = new Color(255, 165, 0);
                     }
                 }
             }
@@ -118,30 +126,41 @@ public class TrackedObjectsManager : MonoBehaviour {
             {
                 //TRACKED - RESET TO GRAY
 
-                if (tracked.TrackableName == "2ofclubs")
+                if (tracked.TrackableName == "Scalpel")
                 {
-                    mTrackedObject = ContainedInDict("2ofclubs");
+                    mTrackedObject = ContainedInDict("Scalpel");
                     mTrackedObject.State = (int)objectStates.visible;
                     scalpelString.color = Color.gray;
                 }
-                else if (tracked.TrackableName == "3ofclubs")
+                else if (tracked.TrackableName == "Pincers")
                 {
-                    mTrackedObject = ContainedInDict("3ofclubs");
+                    mTrackedObject = ContainedInDict("Pincers");
                     mTrackedObject.State = (int)objectStates.visible;
-                    spongeString.color = Color.gray;
+                    pincerString.color = Color.gray;
+                }
+                else if (tracked.TrackableName == "Scissors")
+                {
+                    mTrackedObject = ContainedInDict("Scissors");
+                    mTrackedObject.State = (int)objectStates.visible;
+                    scissorsString.color = Color.gray;
                 }
 
                 //ATTENTION - GREEN
 
-                if (tracked.TrackableName == "2ofclubs" && attentionObject == "2ofclubs")
+                if (tracked.TrackableName == "Scalpel" && ( attentionObject == "scalpel" || attentionObject == "Scalpel" ) )
                 {
                     mTrackedObject.State = (int)objectStates.attention;
                     scalpelString.color = Color.green;
                 }
-                else if (tracked.TrackableName == "3ofclubs" && attentionObject == "3ofclubs")
+                else if (tracked.TrackableName == "Pincers" && (attentionObject == "pincers" || attentionObject == "Pincers"))
                 {
                     mTrackedObject.State = (int)objectStates.attention;
-                    spongeString.color = Color.green;
+                    pincerString.color = Color.green;
+                }
+                else if (tracked.TrackableName == "Scissors" && (attentionObject == "scissor" || attentionObject == "Scissor" || attentionObject == "scissors" || attentionObject == "Scissors"))
+                {
+                    mTrackedObject.State = (int)objectStates.attention;
+                    scissorsString.color = Color.green;
                 }
             }
         }
@@ -172,16 +191,23 @@ public class TrackedObjectsManager : MonoBehaviour {
         {
             foreach (var obj in myTrackedObjectsDict)
             {
-                if (obj.Value.State != (int)objectStates.visible && obj.Value.State != (int)objectStates.attention)
+                print("END " + obj.Key);
+
+                if (obj.Value.State != (int)objectStates.visible )
+                    //&& obj.Value.State != (int)objectStates.attention)
                 {
                     obj.Value.State = (int)objectStates.error;
-                    if (obj.Key == "2ofclubs")
+                    if (obj.Key == "Scalpel")
                     {
                         scalpelString.color = Color.red;
                     }
-                    else if (obj.Key == "3ofclubs")
+                    else if (obj.Key == "Pincers")
                     {
-                        spongeString.color = Color.red;
+                        pincerString.color = Color.red;
+                    }
+                    else if (obj.Key == "Scissors")
+                    {
+                        scissorsString.color = Color.red;
                     }
                 }
             }
@@ -199,7 +225,7 @@ public class TrackedObjectsManager : MonoBehaviour {
             mainButton.GetComponentInChildren<Text>().text = "STOP";
 
             scalpelString.color = Color.gray;
-            spongeString.color = Color.gray;
+            pincerString.color = Color.gray;
             scissorsString.color = Color.gray;
 
             StartRecording();
@@ -214,14 +240,19 @@ public class TrackedObjectsManager : MonoBehaviour {
     }
 
     //WATSON - SpeechToText
-
+    bool init = true;
     private void StartRecording()
     {
-        if (recorder != null)
+        if (recorder != null )
         {
             recorder.StartRecording();
-            recorder.OnRecordingEnd.AddListener(AudioClipCallback);
-            print("RECORDING");
+            print("RECORDING ");
+
+            if (init)
+            {
+                init = false;
+                recorder.OnRecordingEnd.AddListener(AudioClipCallback);
+            }
 
             //_speechToText.StartListening(OnRecognize);
         }
@@ -231,7 +262,7 @@ public class TrackedObjectsManager : MonoBehaviour {
     {
         if (player != null)
         {
-            player.StartPlaying(clip);
+            //player.StartPlaying(clip);
         }
         else
             print("***PLAYER MISSING***");

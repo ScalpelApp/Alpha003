@@ -44,11 +44,9 @@ MonoBehaviour:
       ContainsMagnet: 0
   databaseLoad:
     dataSetsToLoad:
-    - Scalpel-Test
-    - cardsClubs
+    - ScalpelTargets
     dataSetsToActivate:
-    - Scalpel-Test
-    - cardsClubs
+    - ScalpelTargets
   videoBackground:
     clippingMode: 0
     numDivisions: 2
