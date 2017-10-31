@@ -44,9 +44,9 @@ MonoBehaviour:
       ContainsMagnet: 0
   databaseLoad:
     dataSetsToLoad:
-    - ScalpelTargets
+    - ScalpelTargets2
     dataSetsToActivate:
-    - ScalpelTargets
+    - ScalpelTargets2
   videoBackground:
     clippingMode: 0
     numDivisions: 2

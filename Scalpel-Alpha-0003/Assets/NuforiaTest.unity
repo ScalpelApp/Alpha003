@@ -325,7 +325,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: PincersMaterial
+  m_Name: ScissorsMaterial
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -338,7 +338,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 7faaf0c0e55b4819aee00ebbbf0c8890, type: 3}
+        m_Texture: {fileID: 2800000, guid: 878a6ee31d264fe588f92a5595f7ec09, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -438,10 +438,10 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTrackableName: Scissors
+  mTrackableName: Scalpel
   mPreserveChildSize: 0
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/ScalpelTargets.xml
+  mDataSetPath: Vuforia/ScalpelTargets2.xml
   mExtendedTracking: 0
   mInitializeSmartTerrain: 0
   mReconstructionToInitialize: {fileID: 0}
@@ -1326,7 +1326,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainButton: {fileID: 517837423}
   scalpelString: {fileID: 1263623552}
-  pincerString: {fileID: 1080642487}
+  tweezersString: {fileID: 1080642487}
   scissorsString: {fileID: 819103375}
   activeObjectString: {fileID: 1496227077}
   recorder: {fileID: 182876955}
@@ -1342,7 +1342,7 @@ GameObject:
   - component: {fileID: 1080642488}
   - component: {fileID: 1080642487}
   m_Layer: 0
-  m_Name: Pincer
+  m_Name: Tweezers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1398,7 +1398,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: PINCER
+  m_Text: TWEEZERS
 --- !u!222 &1080642488
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1537,7 +1537,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: ScalpelMaterial
+  m_Name: TweezersMaterial
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -1550,7 +1550,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 063b2787c396457f883039be8ed93195, type: 3}
+        m_Texture: {fileID: 2800000, guid: 980bd3a894c6460f918d1e7b886f459e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -1698,7 +1698,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: ScissorsMaterial
+  m_Name: ScalpelMaterial
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -1711,7 +1711,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: f43a9b0d35534b35b2e5e4dcc3279948, type: 3}
+        m_Texture: {fileID: 2800000, guid: 097645100cf447be93cf4f232e17c420, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -1968,10 +1968,10 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTrackableName: Pincers
+  mTrackableName: Scissors
   mPreserveChildSize: 0
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/ScalpelTargets.xml
+  mDataSetPath: Vuforia/ScalpelTargets2.xml
   mExtendedTracking: 0
   mInitializeSmartTerrain: 0
   mReconstructionToInitialize: {fileID: 0}
@@ -2105,10 +2105,10 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTrackableName: Scalpel
+  mTrackableName: Tweezers
   mPreserveChildSize: 0
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/ScalpelTargets.xml
+  mDataSetPath: Vuforia/ScalpelTargets2.xml
   mExtendedTracking: 0
   mInitializeSmartTerrain: 0
   mReconstructionToInitialize: {fileID: 0}

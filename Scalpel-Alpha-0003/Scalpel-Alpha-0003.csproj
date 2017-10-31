@@ -467,6 +467,7 @@
     <None Include="Assets\Speech Auto Detector\README.txt" />
     <None Include="Assets\StreamingAssets\Vuforia\Scalpel-Test.xml" />
     <None Include="Assets\StreamingAssets\Vuforia\ScalpelTargets.xml" />
+    <None Include="Assets\StreamingAssets\Vuforia\ScalpelTargets2.xml" />
     <None Include="Assets\StreamingAssets\Vuforia\VuforiaMars_Images.xml" />
     <None Include="Assets\StreamingAssets\Vuforia\VuforiaMars_Object_OT.xml" />
     <None Include="Assets\StreamingAssets\Vuforia\VuforiaMars_VuMark.xml" />

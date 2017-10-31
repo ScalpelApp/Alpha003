@@ -4,14 +4,16 @@ using UnityEngine.UI;
 using UnityEngine.Audio;
 using Vuforia;
 using IBM.Watson.DeveloperCloud.Services.SpeechToText.v1;
+using Word = IBM.Watson.DeveloperCloud.Services.SpeechToText.v1.Word;
 using IBM.Watson.DeveloperCloud.Utilities;
 using IBM.Watson.DeveloperCloud.DataTypes;
+using System.Collections;
 
 public class TrackedObjectsManager : MonoBehaviour {
 
     public Button mainButton;
     public Text scalpelString;
-    public Text pincerString;
+    public Text tweezersString;
     public Text scissorsString;
     public Text activeObjectString;
 
@@ -19,11 +21,16 @@ public class TrackedObjectsManager : MonoBehaviour {
     private MyTrackableObject mTrackedObject;
     private Dictionary<string, MyTrackableObject> myTrackedObjectsDict;
 
+    private bool _createCustomizationsTested = false;
+    private string _createdCustomizationID;
+    private bool _addCustomWordsFromObjectTested = false;
+
+    private int counter = 0;
     private List<string> activeObjectsList = new List<string>(new string[] { "2ofclubs", "3ofclubs" });
     private enum objectStates : int { visible, attention, active, unsure, error };
 
+    private bool _INITComplete = false;
     private bool ProcessingBool = false;
-    private int counter = 0;
     private string attentionObject;
 
     public AudioRecorder recorder;
@@ -35,27 +42,119 @@ public class TrackedObjectsManager : MonoBehaviour {
         url = "https://stream.watsonplatform.net/speech-to-text/api";
 
 
-// BACK-UP CREDENTIALS - COMMENT OUT ABOVE LINES AND REMOVE "//" FROM THESE LINES
+    // BACK-UP CREDENTIALS - COMMENT OUT ABOVE LINES AND REMOVE "//" FROM THESE LINES
     //private string
     //    username = "095d7fdd-a751-4783-bf30-44f601861ab5",
     //    password = "7VLquzgEWdIi",
     //    url = "https://stream.watsonplatform.net/speech-to-text/api";
-  
+
     private SpeechToText _speechToText;
 
     //INIT
 
-    void Start () {
+    void Start() {
 
-        Credentials credentials = new Credentials( username, password, url);
+        Credentials credentials = new Credentials(username, password, url);
         _speechToText = new SpeechToText(credentials);
+
         GetWatsonModels();
+
+        //_speechToText.CreateCustomization(HandleCreateCustomization, "scalpel-test-customization", "en-US_BroadbandModel", "adding new wods");
+        //while (!_createCustomizationsTested)
+        //    yield return null;
+
+        ////  Add custom words from object
+        //Words words = new Words();
+        //List<Word> wordList = new List<Word>();
+
+        //Word w0 = new Word();
+        //w0.word = "scalpel";
+        //w0.sounds_like = new string[3];
+        //w0.sounds_like[0] = "sc al pel";
+        //w0.sounds_like[1] = "sk al pel";
+        //w0.sounds_like[2] = "sk al pell";
+        //w0.display_as = "scalpel";
+        //wordList.Add(w0);
+
+        //Word w1 = new Word();
+        //w1.word = "tweezers";
+        //w1.sounds_like = new string[4];
+        //w1.sounds_like[0] = "twee zers";
+        //w1.sounds_like[1] = "twe zer s";
+        //w1.sounds_like[2] = "twe ze res";
+        //w1.sounds_like[3] = "twee ze rs";
+        //w1.display_as = "tweezers";
+        //wordList.Add(w1);
+
+        //Word w2 = new Word();
+        //w2.word = "scissors";
+        //w2.sounds_like = new string[3];
+        //w2.sounds_like[0] = "sc is ors";
+        //w2.sounds_like[1] = "scis ors";
+        //w2.sounds_like[2] = "sci sors";
+        //w2.display_as = "scissors";
+        //wordList.Add(w2);
+        //words.words = wordList.ToArray();
+
+        //print("ID " + _createdCustomizationID);
+
+        //_speechToText.AddCustomWords(HandleAddCustomWordsFromObject, _createdCustomizationID, words);
+
+        Runnable.Run(InitWatson());
 
         trackerManager = TrackerManager.Instance.GetStateManager();
 
         mainButton.onClick.AddListener(StartProcess);
 
         myTrackedObjectsDict = new Dictionary<string, MyTrackableObject>();
+
+        _INITComplete = true;
+    }
+
+    private IEnumerator InitWatson()
+    {
+        _speechToText.CreateCustomization(HandleCreateCustomization, "scalpel-test-customization", "en-US_BroadbandModel", "adding new wods");
+        while (!_createCustomizationsTested)
+            yield return null;
+
+        //  Add custom words from object
+        Words words = new Words();
+        List<Word> wordList = new List<Word>();
+
+        Word w0 = new Word();
+        w0.word = "scalpel";
+        w0.sounds_like = new string[3];
+        w0.sounds_like[0] = "sc al pel";
+        w0.sounds_like[1] = "sk al pel";
+        w0.sounds_like[2] = "sk al pell";
+        w0.display_as = "scalpel";
+        wordList.Add(w0);
+
+        Word w1 = new Word();
+        w1.word = "tweezers";
+        w1.sounds_like = new string[4];
+        w1.sounds_like[0] = "twee zers";
+        w1.sounds_like[1] = "twe zer s";
+        w1.sounds_like[2] = "twe ze res";
+        w1.sounds_like[3] = "twee ze rs";
+        w1.display_as = "tweezers";
+        wordList.Add(w1);
+
+        Word w2 = new Word();
+        w2.word = "scissors";
+        w2.sounds_like = new string[5];
+        w2.sounds_like[0] = "sc is ors";
+        w2.sounds_like[1] = "scis ors";
+        w2.sounds_like[2] = "scince it is";
+        w2.sounds_like[3] = "says is";
+        w2.sounds_like[4] = "he says";
+        w2.display_as = "scissors";
+        wordList.Add(w2);
+        words.words = wordList.ToArray();
+
+        print("ID " + _createdCustomizationID);
+
+        _speechToText.AddCustomWords(HandleAddCustomWordsFromObject, _createdCustomizationID, words);
     }
 
     // UPDATE - CALLED ONCE PER FRAME
@@ -88,27 +187,27 @@ public class TrackedObjectsManager : MonoBehaviour {
 
             foreach (var obj in myTrackedObjectsDict)
             {
-                if (obj.Value.State == (int)objectStates.attention)
-                {
-                    // REQUESTED - YELLOW
+                //if (obj.Value.State == (int)objectStates.attention)
+                //{
+                //    // REQUESTED - YELLOW
 
-                    obj.Value.State = (int)objectStates.active;
+                //    obj.Value.State = (int)objectStates.active;
 
-                    if (obj.Key == "Scalpel")
-                    {
-                        scalpelString.color = Color.yellow;
-                    }
-                    else if (obj.Key == "Pincers")
-                    {
-                        pincerString.color = Color.yellow;
-                    }
-                    else if (obj.Key == "Scissors")
-                    {
-                        scissorsString.color = Color.yellow;
-                    }
-                }
-                else
-                {
+                //    if (obj.Key == "Scalpel")
+                //    {
+                //        scalpelString.color = Color.yellow;
+                //    }
+                //    else if (obj.Key == "Tweezers")
+                //    {
+                //        tweezersString.color = Color.yellow;
+                //    }
+                //    else if (obj.Key == "Scissors")
+                //    {
+                //        scissorsString.color = Color.yellow;
+                //    }
+                //}
+                //else
+                //{
                     //UNSURE - ORNAGE
 
                     obj.Value.State = (int)objectStates.unsure;
@@ -117,15 +216,15 @@ public class TrackedObjectsManager : MonoBehaviour {
                     {
                         scalpelString.color = new Color(255, 165, 0);
                     }
-                    else if (obj.Key == "Pincers")
+                    else if (obj.Key == "Tweezers")
                     {
-                        pincerString.color = new Color(255, 165, 0);
+                        tweezersString.color = new Color(255, 165, 0);
                     }
                     else if (obj.Key == "Scissors")
                     {
                         scissorsString.color = new Color(255, 165, 0);
                     }
-                }
+                //}
             }
             
             // Iterate through the list of active trackables
@@ -139,11 +238,11 @@ public class TrackedObjectsManager : MonoBehaviour {
                     mTrackedObject.State = (int)objectStates.visible;
                     scalpelString.color = Color.gray;
                 }
-                else if (tracked.TrackableName == "Pincers")
+                else if (tracked.TrackableName == "Tweezers")
                 {
-                    mTrackedObject = ContainedInDict("Pincers");
+                    mTrackedObject = ContainedInDict("Tweezers");
                     mTrackedObject.State = (int)objectStates.visible;
-                    pincerString.color = Color.gray;
+                    tweezersString.color = Color.gray;
                 }
                 else if (tracked.TrackableName == "Scissors")
                 {
@@ -159,10 +258,10 @@ public class TrackedObjectsManager : MonoBehaviour {
                     mTrackedObject.State = (int)objectStates.attention;
                     scalpelString.color = Color.green;
                 }
-                else if (tracked.TrackableName == "Pincers" && (attentionObject == "pincers" || attentionObject == "Pincers"))
+                else if (tracked.TrackableName == "Tweezers" && (attentionObject == "tweezers" || attentionObject == "Tweezers"))
                 {
                     mTrackedObject.State = (int)objectStates.attention;
-                    pincerString.color = Color.green;
+                    tweezersString.color = Color.green;
                 }
                 else if (tracked.TrackableName == "Scissors" && (attentionObject == "scissor" || attentionObject == "Scissor" || attentionObject == "scissors" || attentionObject == "Scissors"))
                 {
@@ -194,7 +293,7 @@ public class TrackedObjectsManager : MonoBehaviour {
 
     private void LateUpdate()
     {
-        if (!ProcessingBool)
+        if (!ProcessingBool && _INITComplete)
         {
             foreach (var obj in myTrackedObjectsDict)
             {
@@ -208,9 +307,9 @@ public class TrackedObjectsManager : MonoBehaviour {
                     {
                         scalpelString.color = Color.red;
                     }
-                    else if (obj.Key == "Pincers")
+                    else if (obj.Key == "Tweezers")
                     {
-                        pincerString.color = Color.red;
+                        tweezersString.color = Color.red;
                     }
                     else if (obj.Key == "Scissors")
                     {
@@ -232,7 +331,7 @@ public class TrackedObjectsManager : MonoBehaviour {
             mainButton.GetComponentInChildren<Text>().text = "STOP";
 
             scalpelString.color = Color.gray;
-            pincerString.color = Color.gray;
+            tweezersString.color = Color.gray;
             scissorsString.color = Color.gray;
 
             StartRecording();
@@ -304,6 +403,26 @@ public class TrackedObjectsManager : MonoBehaviour {
     private void HandleGetModels(ModelSet result, string customData)
     {
         Debug.Log("ExampleSpeechToText" + " Speech to Text - Get models response: {0} " + customData);
+    }
+
+    private void HandleCreateCustomization(CustomizationID customizationID, string customData)
+    {
+        _createdCustomizationID = customizationID.customization_id;
+        _createCustomizationsTested = true;
+    }
+
+    private void HandleAddCustomWordsFromObject(bool success, string customData)
+    {
+        if (success)
+        {
+            print("ExampleSpeechToText Speech to Text - Add custom words from object response: succeeded!");
+        }
+        else
+        {
+            print("ExampleSpeechToText Failed to delete custom word!");
+        }
+
+        _addCustomWordsFromObjectTested = true;
     }
 
     private void OnRecognize(SpeechRecognitionEvent result)
